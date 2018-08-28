@@ -32,12 +32,12 @@ int main()									//主函数开始
 	while (true)
 	{
 		/*6.接收连接*/
-		s1 = ::accept(s, (sockaddr*)&addr1, &n);	//接受连接请求，循环等待信号
+		s1 = ::accept(s, (sockaddr*)&addr1, &n);	//接受连接请求，--阻塞直到有客户端连接
 		if (s1 != NULL)
 		{
 			printf("%s已经连接上\r\n", inet_ntoa(addr1.sin_addr));
 			/*7.数据发送*/
-			::send(s1, sztext, sizeof(sztext), 0);	//向客户端发送字符数组
+			::send(s1, sztext, sizeof(sztext), 0);	//向客户端发送字符数组--阻塞直到数据发送完成
 		}
 		/*8.关闭套接字*/
 		::closesocket(s);						//关闭套接字句柄

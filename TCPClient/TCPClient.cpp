@@ -26,7 +26,7 @@ int main()							//主函数开始
 	::connect(s, (sockaddr*)&addr, sizeof(addr));
 
 	/*5.数据接收*/
-	::recv(s, sztext, sizeof(sztext), 0);
+	::recv(s, sztext, sizeof(sztext), 0);//阻塞直到有数据可读
 	printf("%s\r\n", sztext);
 
 	/*6.关闭套接字*/
