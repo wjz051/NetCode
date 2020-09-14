@@ -1,7 +1,7 @@
 #include<winsock2.h>					//包含头文件
 #include<stdio.h>
 #include<windows.h>
-#pragma comment(lib,"WS2_32.lib")			//连接套接字库
+#pragma comment(lib,"WS2_32.lib")			//连接套接字库--测热额
 
 int main()
 {
